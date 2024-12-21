@@ -20,9 +20,7 @@ public class MagnetMovement : MonoBehaviour
     {
 
         transform.position += Vector3.down * _fallSpeed * Time.deltaTime;
-
-
-
+        
 
 
         if (camera.activeSelf)

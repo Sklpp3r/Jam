@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 1108094138}
   - component: {fileID: 1108094137}
   m_Layer: 0
-  m_Name: Managment
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e41ad0f05069e42a3325d9dc66bb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sahneButton: {fileID: 1841692269}
 --- !u!4 &1108094138
 Transform:
   m_ObjectHideFlags: 0

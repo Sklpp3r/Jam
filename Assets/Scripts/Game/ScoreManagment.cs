@@ -15,4 +15,5 @@ public class ScoreManagment : MonoBehaviour
         
         scoreText.text = "Score: " + Mathf.FloorToInt(score).ToString();
     }
+    
 }
