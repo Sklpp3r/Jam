@@ -2,24 +2,28 @@ using UnityEngine;
 
 public class MagnetMovement : MonoBehaviour
 {
-    private Camera cam;
     [SerializeField] private Transform magnet1;
     [SerializeField] private Transform magnet2;
     private bool isSelected = false;
-    private float zCoordinate;
 
     private int sayi;
-    
+    public bool dif;
     
     public float moveSpeed = 5f;
 
-    void Start()
-    {
-        cam = Camera.main;
-    }
+    public GameObject camera;
 
     void Update()
     {
+        if (camera.activeSelf)
+        {
+            dif = true;
+        }
+        else
+        {
+            dif = false;
+        }
+        
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             isSelected = true;
@@ -32,18 +36,16 @@ public class MagnetMovement : MonoBehaviour
             sayi = 0;
         }
         
-
-        // Eğer obje seçildiyse, hareket ettirme işlemi yapılır
-        if (isSelected)
+        
+        if (isSelected && dif == true)
         {
-            // W ve S tuşlarına basıldığında hareket et
             if (sayi == 1)
             {
-                if (Input.GetKey(KeyCode.W)) // W tuşuna basıldığında yukarı hareket et
+                if (Input.GetKey(KeyCode.W))
                 {
                     magnet1.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
                 }
-                if (Input.GetKey(KeyCode.S)) // S tuşuna basıldığında aşağıya hareket et
+                if (Input.GetKey(KeyCode.S))
                 {
                     magnet1.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
                 }
@@ -51,18 +53,49 @@ public class MagnetMovement : MonoBehaviour
 
             if (sayi == 0)
             {
-                if (Input.GetKey(KeyCode.W)) // W tuşuna basıldığında yukarı hareket et
+                if (Input.GetKey(KeyCode.W))
                 {
                     magnet2.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
                 }
                 
-                if (Input.GetKey(KeyCode.S)) // S tuşuna basıldığında aşağıya hareket et
+                if (Input.GetKey(KeyCode.S))
                 {
                     magnet2.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
                 }  
             }
 
         }
+
+        if (isSelected && dif == false)
+        {
+            if (sayi == 1)
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    magnet1.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                }
+
+                if (Input.GetKey(KeyCode.D))
+                {
+                    magnet1.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+                }
+            }
+
+            if (sayi == 0)
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    magnet2.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                }
+
+                if (Input.GetKey(KeyCode.D))
+                {
+                    magnet2.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+                }
+            } 
+        }
+
+
     }
     
     
