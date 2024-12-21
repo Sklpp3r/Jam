@@ -302,7 +302,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234309006}
-  - component: {fileID: 234309005}
+  - component: {fileID: 234309007}
+  - component: {fileID: 234309008}
   m_Layer: 0
   m_Name: game manager
   m_TagString: Untagged
@@ -310,21 +311,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &234309005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234309004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc8102d77df5a041913e70c1bf12500, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnet1: {fileID: 703914341}
-  magnet2: {fileID: 1711574037}
-  moveSpeed: 5
 --- !u!4 &234309006
 Transform:
   m_ObjectHideFlags: 0
@@ -340,6 +326,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234309007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234309004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a24436ffaa81e4a8424d922c74026a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  ball: 0
+--- !u!114 &234309008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234309004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc8102d77df5a041913e70c1bf12500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnet1: {fileID: 703914341}
+  magnet2: {fileID: 1711574037}
+  dif: 0
+  moveSpeed: 5
+  camera: {fileID: 1388481834}
 --- !u!1 &252808089
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,29 +571,13 @@ GameObject:
   - component: {fileID: 703914340}
   - component: {fileID: 703914339}
   - component: {fileID: 703914338}
-  - component: {fileID: 703914337}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: LMagnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &703914337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703914336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc8102d77df5a041913e70c1bf12500, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnet1: {fileID: 0}
-  magnet2: {fileID: 0}
-  moveSpeed: 5
 --- !u!65 &703914338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -676,7 +677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775240289}
   m_Layer: 0
-  m_Name: -------------------------------
+  m_Name: ------------LEVEL--------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,9 +699,41 @@ Transform:
   - {fileID: 1849100232}
   - {fileID: 544577946}
   - {fileID: 1970276884}
+  - {fileID: 920144363}
   - {fileID: 703914341}
   - {fileID: 1711574037}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &920144362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920144363}
+  m_Layer: 0
+  m_Name: ---------PLAYER--------------- (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920144363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920144362}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6831, y: -5.290053, z: 6.88852}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 775240289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &944477922
 GameObject:
@@ -932,29 +965,13 @@ GameObject:
   - component: {fileID: 1711574036}
   - component: {fileID: 1711574035}
   - component: {fileID: 1711574034}
-  - component: {fileID: 1711574033}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: RMagnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1711574033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711574032}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc8102d77df5a041913e70c1bf12500, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnet1: {fileID: 0}
-  magnet2: {fileID: 0}
-  moveSpeed: 5
 --- !u!65 &1711574034
 BoxCollider:
   m_ObjectHideFlags: 0
