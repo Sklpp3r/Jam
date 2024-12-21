@@ -6,14 +6,9 @@ public class ScoreManagment : MonoBehaviour
 {
     public TMP_Text scoreText;
 
-    public int ball;
+    public float ball;
         
    float score = 0f; 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         score += Time.deltaTime * ball;
