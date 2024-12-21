@@ -6,7 +6,7 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _obstaclePrefab;
     [SerializeField] private float _obstacleSpawnTime;
-    [SerializeField] private float _xSpawnRange;
+    [SerializeField] private float _XSpawnRangeL, _XSpawnRangeR;
     [SerializeField] Transform _parentTransform;
 
     private void Start()
@@ -20,7 +20,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(_obstaclePrefab, new Vector3(UnityEngine.Random.Range(-11, 11), 11, UnityEngine.Random.Range(2,-2)), quaternion.identity, _parentTransform);
+            Instantiate(_obstaclePrefab, new Vector3(UnityEngine.Random.Range(-_XSpawnRangeL, _XSpawnRangeR), 14, 0), quaternion.identity, _parentTransform);
             yield return new WaitForSeconds(_obstacleSpawnTime);
         }
     }

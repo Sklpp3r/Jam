@@ -4,17 +4,27 @@ public class MagnetMovement : MonoBehaviour
 {
     [SerializeField] private Transform magnet1;
     [SerializeField] private Transform magnet2;
+    [SerializeField] private float _fallSpeed;
+    
+
     private bool isSelected = false;
 
     private int sayi;
     public bool dif;
-    
+
     public float moveSpeed = 5f;
 
     public GameObject camera;
 
     void Update()
     {
+
+        transform.position += Vector3.down * _fallSpeed * Time.deltaTime;
+
+
+
+
+
         if (camera.activeSelf)
         {
             dif = true;
@@ -23,7 +33,7 @@ public class MagnetMovement : MonoBehaviour
         {
             dif = false;
         }
-        
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             isSelected = true;
@@ -35,17 +45,17 @@ public class MagnetMovement : MonoBehaviour
             isSelected = true;
             sayi = 0;
         }
-        
-        
+
+
         if (isSelected && dif == true)
         {
             if (sayi == 1)
             {
-                if (Input.GetKey(KeyCode.W))
+                if (Input.GetKey(KeyCode.UpArrow))
                 {
                     magnet1.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
                 }
-                if (Input.GetKey(KeyCode.S))
+                if (Input.GetKey(KeyCode.DownArrow))
                 {
                     magnet1.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
                 }
@@ -53,15 +63,15 @@ public class MagnetMovement : MonoBehaviour
 
             if (sayi == 0)
             {
-                if (Input.GetKey(KeyCode.W))
+                if (Input.GetKey(KeyCode.UpArrow))
                 {
                     magnet2.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
                 }
-                
-                if (Input.GetKey(KeyCode.S))
+
+                if (Input.GetKey(KeyCode.DownArrow))
                 {
                     magnet2.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
-                }  
+                }
             }
 
         }
@@ -92,13 +102,13 @@ public class MagnetMovement : MonoBehaviour
                 {
                     magnet2.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
                 }
-            } 
+            }
         }
 
 
     }
-    
-    
+
+
 }
 
 
