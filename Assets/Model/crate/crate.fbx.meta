@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 236341a625c0f9a4cb9e1fa4dd5d632a
+guid: 8ee2817cf7a9863488fb4ad81b36084d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 7cd725b890e85a145a16020c1fb3b3e9, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: james-doyle-cube-test
+    second: {fileID: 2800000, guid: 33858939735c8c84bb07c1b2d43f7b19, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
