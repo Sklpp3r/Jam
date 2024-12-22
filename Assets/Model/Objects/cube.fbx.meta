@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PixelTextureGrid_64
-    second: {fileID: 2800000, guid: 8260c2ee12da182459fbb24e9b4c2d1d, type: 3}
+    second: {fileID: 2800000, guid: 2de220066858ef64e99fb4db66a15d8f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

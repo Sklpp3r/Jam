@@ -12,23 +12,21 @@ public class BasketMovement : MonoBehaviour
   
     void Update()
     {
-        if (elapsedTime < forceDuration)
-        {
-
+       
 
             if (Input.GetKey(KeyCode.A))
             {
-                rb.AddForce(Vector3.left * forceAmount, ForceMode.Force);
+                rb.AddForce(Vector3.left * forceAmount);
                 elapsedTime += Time.deltaTime;
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                rb.AddForce(Vector3.right * forceAmount, ForceMode.Force);
+                rb.AddForce(Vector3.right * forceAmount);
                 elapsedTime += Time.deltaTime;
             }
 
-        }
+        
         
     }
 
