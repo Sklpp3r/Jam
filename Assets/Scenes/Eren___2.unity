@@ -372,6 +372,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0125254, y: 1.0125254, z: 1.0125254}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114833384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114833376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686330289be8c1a4aafcbf4c2ae0eb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreM: {fileID: 1015539513}
 --- !u!1 &213566669
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +952,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6aa2f5ef47b1dfc4097357257aec732c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 114833383}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6aa2f5ef47b1dfc4097357257aec732c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 114833384}
   m_SourcePrefab: {fileID: 100100000, guid: 6aa2f5ef47b1dfc4097357257aec732c, type: 3}
 --- !u!1 &944477922
 GameObject:
@@ -1003,7 +1019,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1032437463}
-  ball: 10
+  ball: 1
+  score: 0
 --- !u!4 &1015539514
 Transform:
   m_ObjectHideFlags: 0

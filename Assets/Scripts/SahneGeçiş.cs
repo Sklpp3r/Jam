@@ -4,6 +4,6 @@ public class SahneGeçiş : MonoBehaviour
 {
     public void ChangeSceneByIndex()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }
