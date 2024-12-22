@@ -8,7 +8,7 @@ public class ScoreManagment : MonoBehaviour
 
     public float ball;
         
-   float score = 0f; 
+   public float score = 0f; 
     void Update()
     {
         score += Time.deltaTime * ball;

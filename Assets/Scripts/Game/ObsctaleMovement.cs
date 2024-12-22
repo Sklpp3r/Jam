@@ -3,6 +3,8 @@ using UnityEngine;
 public class ObsctaleMovement : MonoBehaviour
 {
     [SerializeField] private float _obstacleSpeed;
+    
+    public ScoreManagment scoreM;
 
     private void Start()
     {
@@ -20,6 +22,11 @@ public class ObsctaleMovement : MonoBehaviour
         if (other.CompareTag("Death"))
         { 
             Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            scoreM.score -= 100;
         }
     }
 
